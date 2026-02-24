@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://8snak2evkdjn"]
+
+[ext_resource type="PackedScene" uid="uid://bufedlkkdrrhu" path="res://player.tscn" id="1_jotil"]
+[ext_resource type="Texture2D" uid="uid://7p273s15isjl" path="res://assets/Tiles/Tile-10.png" id="4_sxjcc"]
+[ext_resource type="Texture2D" uid="uid://yspaepmi12sd" path="res://assets/Tiles/Tile-08.png" id="40_ucnos"]
+[ext_resource type="Texture2D" uid="uid://ceah70ec5vk3p" path="res://assets/Tiles/Tile-09.png" id="41_mhrhs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asog6"]
+texture = ExtResource("40_ucnos")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mawog"]
+texture = ExtResource("41_mhrhs")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b56k5"]
+texture = ExtResource("4_sxjcc")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[sub_resource type="TileSet" id="TileSet_scc5w"]
+tile_size = Vector2i(24, 24)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_asog6")
+sources/1 = SubResource("TileSetAtlasSource_mawog")
+sources/2 = SubResource("TileSetAtlasSource_b56k5")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_jotil")]
+position = Vector2(256, 169)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_scc5w")
+format = 2
+layer_0/tile_data = PackedInt32Array(655365, 2, 0, 655366, 2, 0, 655367, 2, 0, 655368, 2, 0, 655369, 2, 0, 655370, 2, 0, 655371, 2, 0, 655372, 2, 0, 655373, 2, 0, 655374, 2, 0, 655375, 2, 0, 655376, 2, 0, 655377, 2, 0, 655378, 2, 0, 655379, 2, 0, 655380, 2, 0, 655381, 2, 0, 655382, 2, 0, 655383, 2, 0, 655384, 2, 0, 655385, 2, 0, 655386, 2, 0, 655387, 2, 0, 655388, 1, 0, 655363, 0, 0, 655364, 2, 0)
